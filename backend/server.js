@@ -18,19 +18,17 @@ app.use(cors())
 //db connection
 connectDB();
 // api endpoints
-app.use("/api/food",foodRouter)
-app.use("/images",express.static('uploads'))
+app.use("/api/food", foodRouter)
+app.use("/images", express.static('uploads'))
 app.use('/api/user', userRouter)
 app.use('/api/cart', cartRouter)
 app.use('/api/order', orderRouter)
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("API working")
 })
 
 
-app.listen(port,()=>{
+app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`)
 })
-
-//mongodb+srv://dulanjalisenarathna93:E2JUb0zfaT2FVp8D@cluster0.exkxkun.mongodb.net/?
